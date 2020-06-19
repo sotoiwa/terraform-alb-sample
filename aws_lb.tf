@@ -48,7 +48,7 @@ resource "aws_lb_target_group" "alb" {
   depends_on = [aws_lb.alb]
 }
 
-resource "aws_alb_target_group_attachment" "alb" {
+resource "aws_lb_target_group_attachment" "alb" {
   target_group_arn = aws_lb_target_group.alb.arn
   target_id        = aws_instance.web-instance.id
   port             = 80

@@ -8,3 +8,11 @@ resource "aws_vpc" "main" {
     Name = var.app-name
   }
 }
+
+resource "aws_internet_gateway" "igw" {
+  vpc_id = aws_vpc.main.id
+
+  tags = {
+    Name = "${var.app-name}-igw"
+  }
+}
