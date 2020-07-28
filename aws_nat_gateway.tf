@@ -20,6 +20,6 @@ resource "aws_nat_gateway" "nat-c" {
   subnet_id     = aws_subnet.public-subnet-c.id
 
   tags = {
-    Name = "${var.app-name}-natgw-a"
+    Name = "${var.app-name}-natgw-c"
   }
 }
