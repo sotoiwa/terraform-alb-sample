@@ -44,7 +44,7 @@ resource "aws_security_group_rule" "alb-sg" {
   security_group_id = aws_security_group.alb-sg.id
 }
 
-resource "aws_security_group_rule" "alb-sg-2" {
+resource "aws_security_group_rule" "alb-sg-1" {
   type              = "egress"
   from_port         = 0
   to_port           = 0
