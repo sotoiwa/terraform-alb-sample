@@ -1,5 +1,10 @@
 # terraform-alb-sample
 
+## アーキテクチャー
+
+![image](architecture.drawio.svg)
+## デプロイ
+
 ```sh
 $ terraform version
 Terraform v0.12.26

@@ -1,54 +1,54 @@
-resource "aws_security_group" "web-sg" {
+resource "aws_security_group" "web" {
   name   = "${var.app-name}-web-sg"
-  vpc_id = aws_vpc.main.id
+  vpc_id = aws_vpc.this.id
 }
 
-resource "aws_security_group_rule" "web-sg" {
+resource "aws_security_group_rule" "web" {
   type                     = "ingress"
   from_port                = 80
   to_port                  = 80
   protocol                 = "tcp"
-  source_security_group_id = aws_security_group.alb-sg.id
-  security_group_id        = aws_security_group.web-sg.id
+  source_security_group_id = aws_security_group.alb.id
+  security_group_id        = aws_security_group.web.id
 }
 
-resource "aws_security_group_rule" "web-sg-1" {
+resource "aws_security_group_rule" "web_1" {
   type              = "ingress"
   from_port         = 22
   to_port           = 22
   protocol          = "tcp"
   cidr_blocks       = ["0.0.0.0/0"]
-  security_group_id = aws_security_group.web-sg.id
+  security_group_id = aws_security_group.web.id
 }
 
-resource "aws_security_group_rule" "web-sg-2" {
+resource "aws_security_group_rule" "web_2" {
   type              = "egress"
   from_port         = 0
   to_port           = 0
   protocol          = "-1"
   cidr_blocks       = ["0.0.0.0/0"]
-  security_group_id = aws_security_group.web-sg.id
+  security_group_id = aws_security_group.web.id
 }
 
-resource "aws_security_group" "alb-sg" {
+resource "aws_security_group" "alb" {
   name   = "${var.app-name}-alb-sg"
-  vpc_id = aws_vpc.main.id
+  vpc_id = aws_vpc.this.id
 }
 
-resource "aws_security_group_rule" "alb-sg" {
+resource "aws_security_group_rule" "alb" {
   type              = "ingress"
   from_port         = 80
   to_port           = 80
   protocol          = "tcp"
   cidr_blocks       = ["0.0.0.0/0"]
-  security_group_id = aws_security_group.alb-sg.id
+  security_group_id = aws_security_group.alb.id
 }
 
-resource "aws_security_group_rule" "alb-sg-1" {
+resource "aws_security_group_rule" "alb_1" {
   type              = "egress"
   from_port         = 0
   to_port           = 0
   protocol          = "-1"
   cidr_blocks       = ["0.0.0.0/0"]
-  security_group_id = aws_security_group.alb-sg.id
+  security_group_id = aws_security_group.alb.id
 }
