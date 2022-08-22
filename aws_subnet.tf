@@ -5,7 +5,7 @@ resource "aws_subnet" "public_a" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "${var.app-name}-public-subnet-a"
+    Name = "${var.app_name}-public-subnet-a"
   }
 }
 
@@ -16,7 +16,7 @@ resource "aws_subnet" "public_c" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "${var.app-name}-public-subnet-c"
+    Name = "${var.app_name}-public-subnet-c"
   }
 }
 
@@ -27,7 +27,7 @@ resource "aws_subnet" "private_a" {
   map_public_ip_on_launch = false
 
   tags = {
-    Name = "${var.app-name}-private-subnet-a"
+    Name = "${var.app_name}-private-subnet-a"
   }
 }
 
@@ -38,6 +38,6 @@ resource "aws_subnet" "private_c" {
   map_public_ip_on_launch = false
 
   tags = {
-    Name = "${var.app-name}-private-subnet-c"
+    Name = "${var.app_name}-private-subnet-c"
   }
 }

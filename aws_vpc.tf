@@ -5,7 +5,7 @@ resource "aws_vpc" "this" {
   instance_tenancy     = "default"
 
   tags = {
-    Name = var.app-name
+    Name = var.app_name
   }
 }
 
@@ -13,6 +13,6 @@ resource "aws_internet_gateway" "this" {
   vpc_id = aws_vpc.this.id
 
   tags = {
-    Name = "${var.app-name}-igw"
+    Name = "${var.app_name}-igw"
   }
 }

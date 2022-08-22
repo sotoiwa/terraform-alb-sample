@@ -11,7 +11,7 @@ resource "aws_nat_gateway" "nat_a" {
   subnet_id     = aws_subnet.public_a.id
 
   tags = {
-    Name = "${var.app-name}-natgw-a"
+    Name = "${var.app_name}-natgw-a"
   }
 }
 
@@ -20,6 +20,6 @@ resource "aws_nat_gateway" "nat_c" {
   subnet_id     = aws_subnet.public_c.id
 
   tags = {
-    Name = "${var.app-name}-natgw-c"
+    Name = "${var.app_name}-natgw-c"
   }
 }

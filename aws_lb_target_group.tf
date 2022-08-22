@@ -1,5 +1,5 @@
 resource "aws_lb_target_group" "this" {
-  name     = "${var.app-name}-tg"
+  name     = "${var.app_name}-tg"
   port     = 80
   protocol = "HTTP"
   vpc_id   = aws_vpc.this.id

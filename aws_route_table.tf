@@ -7,7 +7,7 @@ resource "aws_route_table" "public" {
   }
 
   tags = {
-    Name = "${var.app-name}-public-route-table"
+    Name = "${var.app_name}-public-route-table"
   }
 }
 
@@ -20,7 +20,7 @@ resource "aws_route_table" "private_a" {
   }
 
   tags = {
-    Name = "${var.app-name}-private-route-table-a"
+    Name = "${var.app_name}-private-route-table-a"
   }
 }
 
@@ -33,7 +33,7 @@ resource "aws_route_table" "private_c" {
   }
 
   tags = {
-    Name = "${var.app-name}-private-route-table-c"
+    Name = "${var.app_name}-private-route-table-c"
   }
 }
 

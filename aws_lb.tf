@@ -1,5 +1,5 @@
 resource "aws_lb" "this" {
-  name                       = "${var.app-name}-alb"
+  name                       = "${var.app_name}-alb"
   internal                   = false
   load_balancer_type         = "application"
   security_groups            = [aws_security_group.alb.id]
@@ -11,7 +11,7 @@ resource "aws_lb" "this" {
   ]
 
   tags = {
-    "Name" = "${var.app-name}-alb"
+    "Name" = "${var.app_name}-alb"
   }
 }
 
